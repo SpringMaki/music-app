@@ -1,42 +1,90 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ============================================
+   🌸 SpringMaki Music カスタムデザイン
+   ピンク〜水色グラデーション × 手書き風
+   ============================================ */
+
+/* 手書きフォント Armed Lemon */
+@font-face {
+  font-family: 'ArmedLemon';
+  src: url('/fonts/ArmedLemon.ttf') format('truetype');
+  font-display: swap;
+}
+
+/* 背景と全体設定 */
+body {
+  font-family: 'ArmedLemon', sans-serif;
+  /* 左がピンク、右が水色のグラデーション */
+  background: linear-gradient(to right, #ffd6eb, #d6f0ff);
+  color: #66ccff; /* 文字をやさしい水色に */
+  line-height: 1.6;
+}
+
+/* タイトル */
+/* タイトル */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* 白に変更 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 少し立体感を出す */
+}
+
+/* サブタイトル（グレーに変更） */
+.subtitle {
+  font-size: 1.1rem;
+  color: #555; /* ← グレーに変更 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+/* 曲カード */
+.song-card {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px dashed #aee3ff;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(150, 220, 255, 0.4);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.song-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(150, 220, 255, 0.6);
+}
+
+/* 曲タイトル */
+.song-title {
+  font-size: 1.3rem;
+  color: #4dafff;
+  margin-bottom: 0.8rem;
+  text-shadow: 1px 1px 2px rgba(77, 175, 255, 0.3);
+}
+
+/* YouTube 埋め込み動画 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+/* フッター（コピーライト部分） */
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #000;
+  font-family: sans-serif;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}

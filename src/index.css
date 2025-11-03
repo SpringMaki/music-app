@@ -1,68 +1,84 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* =============================
+   🌸 SpringMaki Music 用のCSS
+   ============================= */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* ページ全体の基本スタイル */
 body {
+  font-family: "Noto Sans JP", "Helvetica Neue", sans-serif;
+  background: linear-gradient(180deg, #fffafa, #f9f9ff);
+  color: #333;
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  text-align: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* 曲カード全体のデザイン */
+.song-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 182, 193, 0.3); /* 桜っぽいピンク */
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.2);
+  padding: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* ホバー（マウスを乗せた時）の動き */
+.song-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* 曲タイトル */
+.song-title {
+  font-size: 1.2rem;
+  color: #ff69b4;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* YouTube埋め込み動画をレスポンシブ対応 */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 比率を維持 */
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* フッター */
+/* ===== フッター部分 ===== */
+footer {
+  margin-top: 40px;
+  color: #222; /* 黒っぽい文字色に変更 */
+  font-size: 0.9rem; /* 少し読みやすく大きめに */
+  font-family: 'Arial', sans-serif; /* 普通の読みやすいフォント */
+  text-align: center; /* 中央寄せ */
+}
+
+/* Spring Maki の部分を少し強調 */
+footer span {
+  font-weight: 600;
+}
+
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .song-card {
+    margin: 0 auto;
+    width: 90%;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  .song-title {
+    font-size: 1rem;
   }
 }
